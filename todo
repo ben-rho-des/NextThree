@@ -1,3 +1,10 @@
+##the pile
+
 connect the nextjs docker image to the dynamodb one
 - help: https://medium.com/quick-code/node-js-restful-api-with-dynamodb-local-7e342a934a24
+
 update terraform to provision dynamodb
+
+create component library
+
+fix react state to use context api
