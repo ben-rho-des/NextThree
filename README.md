@@ -1,6 +1,6 @@
 # Nextjs w/ Threejs 
 
-
+![Home page](home.gif?raw=true "Home page")
 
 ### Next.js/node.js commands
 
