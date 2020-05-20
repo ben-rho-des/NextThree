@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Masthead from './masthead';\nexport default Masthead;","map":{"version":3,"sources":["/home/t3hk/development/NextThree/components/masthead/index.js"],"names":["Masthead"],"mappings":"AAAA,OAAOA,QAAP,MAAqB,YAArB;AAEA,eAAeA,QAAf","sourcesContent":["import Masthead from './masthead';\n\nexport default Masthead;\n"]},"metadata":{},"sourceType":"module"}

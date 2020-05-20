@@ -1,0 +1,1 @@
+{"ast":null,"code":"import Banner from './banner';\nexport default Banner;","map":{"version":3,"sources":["/home/t3hk/development/NextThree/components/banner/index.js"],"names":["Banner"],"mappings":"AAAA,OAAOA,MAAP,MAAmB,UAAnB;AAEA,eAAeA,MAAf","sourcesContent":["import Banner from './banner';\n\nexport default Banner;\n"]},"metadata":{},"sourceType":"module"}
