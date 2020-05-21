@@ -231,12 +231,12 @@ const Banner = () => {
     return (
     <>
     <StyledBlobWrap>
-        {process.browser && (<Blob event={blobEvent} />)}
+        {/* {process.browser && (<Blob event={blobEvent} />)} */}
     </StyledBlobWrap>
     <BannerWrap>
         <BannerText className={bannerState}>
             <div className="main-text">
-                <h1>Prototype&nbsp;<strong>#020</strong></h1>
+                <h1>Prototype <strong>#020</strong></h1>
                 <h2>Flow</h2>
             </div>
             
