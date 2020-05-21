@@ -17,7 +17,7 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'din regular';
   font-style: normal;
   font-weight: normal;
-  src: local('D-DIN Regular'), url('./static/fonts/din/D-DIN.woff') format('woff');
+  src: local('D-DIN Regular'), url('./fonts/din/D-DIN.woff') format('woff');
   }
   
   
@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'din italic';
   font-style: normal;
   font-weight: normal;
-  src: local('D-DIN DIN-Italic'), url('./static/fonts/din/D-DIN-Italic.woff') format('woff');
+  src: local('D-DIN DIN-Italic'), url('./fonts/din/D-DIN-Italic.woff') format('woff');
   }
   
   
@@ -33,7 +33,7 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'din bold';
   font-style: normal;
   font-weight: normal;
-  src: local('D-DIN DIN-Bold'), url('./static/fonts/din/D-DIN-Bold.woff') format('woff');
+  src: local('D-DIN DIN-Bold'), url('./fonts/din/D-DIN-Bold.woff') format('woff');
   }
   
   
@@ -41,21 +41,21 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'din condensed regular';
   font-style: normal;
   font-weight: normal;
-  src: local('D-DIN Condensed Regular'), url('./static/fonts/din/D-DINCondensed.woff') format('woff');
+  src: local('D-DIN Condensed Regular'), url('./fonts/din/D-DINCondensed.woff') format('woff');
   }
 
   @font-face {
   font-family: 'din condensed bold';
   font-style: normal;
   font-weight: normal;
-  src: local('D-DIN Condensed DINCondensed-Bold'), url('./static/fonts/din/D-DINCondensed-Bold.woff') format('woff');
+  src: local('D-DIN Condensed DINCondensed-Bold'), url('./fonts/din/D-DINCondensed-Bold.woff') format('woff');
   }
 
   @font-face {
   font-family: 'din exp';
   font-style: normal;
   font-weight: normal;
-  src: local('D-DIN Exp Regular'), url('./static/fonts/din/D-DINExp.woff') format('woff');
+  src: local('D-DIN Exp Regular'), url('./fonts/din/D-DINExp.woff') format('woff');
   }
   
   
@@ -63,14 +63,14 @@ const GlobalStyle = createGlobalStyle`
   font-family: 'din exp';
   font-style: italic;
   font-weight: normal;
-  src: local('D-DIN Exp DINExp-Italic'), url('./static/fonts/din/D-DINExp-Italic.woff') format('woff');
+  src: local('D-DIN Exp DINExp-Italic'), url('./fonts/din/D-DINExp-Italic.woff') format('woff');
   }
   
   @font-face {
   font-family: 'din exp';
   font-style: normal;
   font-weight: bold;
-  src: local('D-DIN Exp DINExp-Bold'), url('./static/fonts/din/D-DINExp-Bold.woff') format('woff');
+  src: local('D-DIN Exp DINExp-Bold'), url('./fonts/din/D-DINExp-Bold.woff') format('woff');
   }
 `
 

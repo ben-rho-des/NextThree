@@ -1,11 +1,25 @@
-const withTypescript = require('@zeit/next-typescript')
-const m = withTypescript();
+const { PHASE_DEVELOPMENT_SERVER } = require('next/constants')
 
-m.exportPathMap = function (defaultPathMap) {
+module.exports = (phase, { defaultConfig }) => {
+  if (phase === PHASE_DEVELOPMENT_SERVER) {
     return {
-        '/': { page: '/' },
-        '/about': { page: '/about' }
+      /* development only config options here */
     }
-};
+  }
 
-module.exports = m;
+  return {
+    /* config options for all phases except development here */
+  }
+}
+
+module.exports = {
+    exportPathMap: async function(
+      defaultPathMap,
+      { dev, dir, outDir, distDir, buildId }
+    ) {
+      return {
+        '/': { page: '/' },
+        '/about': { page: '/about' },
+      }
+    },
+}

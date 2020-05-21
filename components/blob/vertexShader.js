@@ -218,13 +218,13 @@ export const fragmentShader= `
   void main() {
     float r, g, b;
     
-      // r = normalize(qnoise + rcolor);
-      // g = cos(qnoise + gcolor);
-      // b = sin(qnoise + bcolor);  
+      r = normalize(qnoise + rcolor);
+      g = cos(qnoise + gcolor);
+      b = sin(qnoise + bcolor);  
 
-      r = cos(qnoise + rcolor);
-      g = sin(qnoise + gcolor);
-      b = normalize(qnoise + bcolor);
+      // r = cos(qnoise + rcolor);
+      // g = sin(qnoise + gcolor);
+      // b = normalize(qnoise + bcolor);
 
     gl_FragColor = vec4(r, g, b, 1.0);
   }

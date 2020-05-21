@@ -22,7 +22,7 @@ const StyledMasthead = styled.header`
 const Masthead = () => (
   <StyledMasthead>
     <div className="identity">
-      <img src="./static/logo.svg" alt="BRD logo" />
+      <img src="./logo.svg" alt="BRD logo" />
     </div>
     <Nav />
   </StyledMasthead>

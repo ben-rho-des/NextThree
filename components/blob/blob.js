@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useMemo, useRef, useState } from 'react';
 import styled from 'styled-components'
 import * as THREE from 'three';
-import * as meshline from 'threejs-meshline';
+// import * as meshline from 'threejs-meshline';
 import { Canvas, useFrame, useLoader, useThree, useUpdate } from 'react-three-fiber';
 
 import CameraControls from './controls'
@@ -34,7 +34,6 @@ const LeBlob = ( props ) => {
 
     // const [eventStream, setEvent] = useState(props.event);
     const eventStream = props.event
-    // const [texture1] = useLoader(THREE.TextureLoader, ['./static/kitten.jpg'])
   
     const options = 
     // useMemo(
@@ -116,7 +115,6 @@ const LeBlob = ( props ) => {
         if (includePoints) {
             pointShader.current.uniforms.time.value = (options.speed / 1000) * (Date.now() - start);
         }
- 
         // if (active) {
         //   shader.current.uniforms.complex.value = 10;
         //   shader.current.uniforms.eqcolor.value = 2;
@@ -131,31 +129,30 @@ const LeBlob = ( props ) => {
         // mesh.current.material.uniforms.complex.value = mesh.current.material.uniforms.complex.value + 0.01;
         // mesh.current.material.uniforms.decay.value = mesh.current.material.uniforms.decay.value + 0.01;
         
-        if (eventStream !== null) {
-          console.log("mesh.current.material.uniforms", mesh.current.material.uniforms)
-          const ev = eventStream.split("-");
-          if (ev[2] === "ACTIVE") {
-            if (ev[0] === "ROTATE") {
-              const coord = ev[1].toLowerCase();
-              mesh.current.rotation[coord] = mesh.current.rotation[coord] += options.rotateSpeed;
-            }
+        // if (eventStream !== null) {
+        //   const ev = eventStream.split("-");
+        //   if (ev[2] === "ACTIVE") {
+        //     if (ev[0] === "ROTATE") {
+        //       const coord = ev[1].toLowerCase();
+        //       mesh.current.rotation[coord] = mesh.current.rotation[coord] += options.rotateSpeed;
+        //     }
 
-            if (ev[0] === "SCALE") {
-              console.log("SCALE !!!", mesh.current)
-              const direction = ev[1].toLowerCase();
-              const modifier = direction === "up" ? 0.01 : -0.01;
-              const curScale = mesh.current.scale.x;
+        //     if (ev[0] === "SCALE") {
+        //       console.log("SCALE !!!", mesh.current)
+        //       const direction = ev[1].toLowerCase();
+        //       const modifier = direction === "up" ? 0.01 : -0.01;
+        //       const curScale = mesh.current.scale.x;
 
-              const nextScale = curScale + modifier;
+        //       const nextScale = curScale + modifier;
 
-              const cappedNextScale = nextScale < 0.3 ? 0.3 : (nextScale > 1.8 ? 1.8 : nextScale);
+        //       const cappedNextScale = nextScale < 0.3 ? 0.3 : (nextScale > 1.8 ? 1.8 : nextScale);
               
-              mesh.current.scale.x = cappedNextScale;
-              mesh.current.scale.y = cappedNextScale;
-              mesh.current.scale.z = cappedNextScale;
-            }
-          }
-        }
+        //       mesh.current.scale.x = cappedNextScale;
+        //       mesh.current.scale.y = cappedNextScale;
+        //       mesh.current.scale.z = cappedNextScale;
+        //     }
+        //   }
+        // }
     })
 
     return (
@@ -169,7 +166,6 @@ const LeBlob = ( props ) => {
         <mesh 
               // onClick={e => setActive(!active)}
               ref={mesh}
-              // position={mesh.current.waves[0, 0, 10]}
               {...props}
             >
             <icosahedronBufferGeometry  attach="geometry" args={[2, 6]} />
@@ -218,46 +214,61 @@ export const Blob = ({event}) => {
                 {/* <LeBlob
                     includePoints={false}
                     rotateSpeed={0.09}
-                    // position={[0,0,10]}
+
                     size={0.35}
                     rcolor={10}
                     gcolor={20}
                     bcolor={60}
                     /> */}
                     {/* <LeBlob
-                      includePoints={false}
+                      includePoints={true}
                       // rotateSpeed={0.09}
-                      // position={[0,0,10]}
-                      size={0.3}
+                      size={0.31}
                       rcolor={.45}
                       gcolor={2}
                       bcolor={.8}
                       decay={.3}
                       complex={0.3}
-                      displace={1.3}
-                      waves={8}
-                      eqcolor={11}
+                      displace={1}
+                      waves={4}
+                      eqcolor={3}
+                      event={event}
                       /> */}
+                      {/* fire : ncs*/}
+                      {/* <LeBlob
+                        includePoints={false}
+                        // rotateSpeed={0.09}
+                        size={0.3}
+                        rcolor={30}
+                        gcolor={32.21}
+                        bcolor={3.3}
+                        decay={.32}
+                        complex={0.4}
+                        displace={1.3}
+                        waves={8}
+                        eqcolor={12.1}
+
+                        event={event}
+                      /> */} 
+                      {/* fire : ncs*/}
                       <LeBlob
                         includePoints={false}
                         // rotateSpeed={0.09}
-                        // position={[0,0,10]}
                         size={0.3}
-                        rcolor={0}
-                        gcolor={1.2}
-                        bcolor={0.3}
-                        decay={.3}
-                        complex={0.3}
-                        displace={1.3}
-                        waves={8}
-                        eqcolor={5}
+                        rcolor={30}
+                        gcolor={32.21}
+                        bcolor={3.3}
+                        decay={.42}
+                        complex={0.4}
+                        displace={0.3}
+                        waves={9}
+                        eqcolor={12.1}
 
                         event={event}
                       />
                   {/* <LeBlob
                     includePoints={false}
                     // rotateSpeed={0.09}
-                    // position={[0,0,10]}
                     size={0.35}
                     rcolor={10}
                     gcolor={20}
