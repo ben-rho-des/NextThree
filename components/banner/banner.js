@@ -3,8 +3,10 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { fadeIn } from '../keyframes';
-
+import { Button } from 'grommet';
 import Blob from '../blob';
+
+import { Cycle } from "grommet-icons";
 
 // need to clean up these styles
 const BannerText = styled.div`
@@ -183,7 +185,9 @@ const StyledBlobWrap = styled.div`
     height 100vh;
 `;
 
-const BlobControls = styled.div`
+
+const BlobControls = styled.div``;
+/*
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -212,6 +216,7 @@ const BlobControls = styled.div`
         align-self: flex-end;
     }
 `;
+*/
 
 const BannerWrap = styled.div`
     display: flex;
@@ -253,6 +258,10 @@ const Banner = () => {
         <BlobControls>
             {/* <!-- todo move to provider --> */}
             <div>
+            <Button label="secondary" onClick={() => {}} secondary />
+                <Button secondary icon={<Cycle />} label={<><span className="sr-only">Rotate</span>X</>}
+                    onMouseDown={() => setBlobEvent(`ROTATE-X-ACTIVE`)}
+                    onMouseUp={() => setBlobEvent(null)} />
                 <button
                     onMouseDown={() => setBlobEvent(`ROTATE-X-ACTIVE`)}
                     onMouseUp={() => setBlobEvent(null)}
