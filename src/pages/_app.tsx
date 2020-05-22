@@ -148,7 +148,6 @@ export default class BRDApp extends App {
             <Grommet background="transparent" theme={customTheme}>
                 <Component {...pageProps} />
                 <GlobalStyle />
-                heeelo
             </Grommet>
         );
     }

@@ -236,7 +236,7 @@ const Banner = () => {
     return (
     <>
     <StyledBlobWrap>
-        {/* {process.browser && (<Blob event={blobEvent} />)} */}
+        {process.browser && process.env.NEXT_PUBLIC_BLOB !== "SANS_BLOB" && (<Blob event={blobEvent} />)}
     </StyledBlobWrap>
     <BannerWrap>
         <BannerText className={bannerState}>
