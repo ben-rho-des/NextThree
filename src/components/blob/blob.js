@@ -4,7 +4,7 @@ import * as THREE from 'three';
 // import * as meshline from 'threejs-meshline';
 import { Canvas, useFrame, useLoader, useThree, useUpdate } from 'react-three-fiber';
 
-import CameraControls from './controls'
+import Camera from './camera'
 import { fragmentShader, vertexShader, pointVertexShader, pointFragmentShader } from './vertexShader';
 
 const start = Date.now();
@@ -100,7 +100,7 @@ const LeBlob = ( props ) => {
       }),
       []
     );
-
+console.log('RATIO',useThree().gl.getPixelRatio());
     const [active, setActive] = useState(false);
 
     // Rotate mesh every frame, this is outside of React without overhead
@@ -164,7 +164,7 @@ const LeBlob = ( props ) => {
               {...props}
             >
             <icosahedronBufferGeometry  attach="geometry" args={[2, 6]} />
-            <shaderMaterial ref={shader} attach="material" side={THREE.DoubleSide} uniforms={uniforms} fragmentShader={fragmentShader} vertexShader={vertexShader} />
+            <shaderMaterial ref={shader} attach="material" uniforms={uniforms} fragmentShader={fragmentShader} vertexShader={vertexShader} />
         </mesh>
     </group>
     )
@@ -272,7 +272,7 @@ export const Blob = ({event}) => {
                     /> */}
             </Suspense>
 
-            <CameraControls
+            <Camera
                 autoRotate
                 enablePan={false}
                 enableZoom={false}

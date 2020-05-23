@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import { fadeIn } from '../keyframes';
 import { Button } from 'grommet';
 import Blob from '../blob';
-
+import FPSStats from "react-fps-stats";
 import { Cycle } from "grommet-icons";
 
 // need to clean up these styles
@@ -227,16 +227,21 @@ const BannerWrap = styled.div`
     }
 `;
 
-const OPEN_CLASS='is-open';
+const OPENED_CLASS='is-open';
 const CLOSED_CLASS='is-closed';
 
 const Banner = () => {
     const [blobEvent, setBlobEvent] = useState(null);
-    const [bannerState, setBannerState] = useState(OPEN_CLASS);
+    const [bannerState, setBannerState] = useState(OPENED_CLASS);
     return (
     <>
     <StyledBlobWrap>
-        {process.browser && process.env.NEXT_PUBLIC_BLOB !== "SANS_BLOB" && (<Blob event={blobEvent} />)}
+        {process.browser && process.env.NEXT_PUBLIC_BLOB !== "SANS_BLOB" && (
+            <>
+                <Blob event={blobEvent} />
+                <FPSStats bottom="20px" right="60px" top="auto" />
+            </>
+        )}
     </StyledBlobWrap>
     <BannerWrap>
         <BannerText className={bannerState}>
@@ -244,7 +249,6 @@ const Banner = () => {
                 <h1>Prototype <strong>#020</strong></h1>
                 <h2>Flow</h2>
             </div>
-            
             <div className="fluff">
                 <span className="process">Executing tests <span className="blink">█</span></span>
                 <h3>流 / fluir / बहे / couler</h3>
@@ -252,8 +256,8 @@ const Banner = () => {
             </div>
             <p>The state in which a person is engaged in an activity where they are fully immersed with a feeling of energized focus, involvement, and success in the process of the activity.</p>
             <button onClick={() => {
-                setBannerState(bannerState === OPEN_CLASS ? CLOSED_CLASS : OPEN_CLASS)
-            }}>{bannerState === OPEN_CLASS ? 'x' : '>'}</button>
+                setBannerState(bannerState === OPENED_CLASS ? CLOSED_CLASS : OPENED_CLASS)
+            }}>{bannerState === OPENED_CLASS ? 'x' : '>'}</button>
         </BannerText>
         <BlobControls>
             {/* <!-- todo move to provider --> */}
