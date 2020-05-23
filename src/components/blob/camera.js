@@ -1,14 +1,26 @@
-import React, { useRef } from 'react'
+import React, { useEffect, useRef } from 'react'
 import { useThree, useRender, extend, useFrame } from 'react-three-fiber'
 
-import { OrbitControls } from '../../../node_modules/three/examples/jsm/controls/OrbitControls'
 
-extend({ OrbitControls })
 const Camera = props => {
-  const { gl, camera } = useThree()
   const ref = useRef()
-  useFrame(() => ref.current.update())
-  return <orbitControls ref={ref} args={[camera, gl.domElement]} {...props} />
+  const { size, setDefaultCamera } = useThree();
+  
+  // Make the camera known to the system
+  useEffect(() => void setDefaultCamera(ref.current), [])
+  // Update it every frame
+  // useFrame(() => ref.current.updateMatrixWorld());
+
+  return <perspectiveCamera ref={ref}
+      fov="35"
+      aspect={size.width / size.height}
+      // radius={(size.width + size.height) / 4}
+      near={1}
+      far={1000} 
+      // onUpdate={self => self.updateProjectionMatrix()}
+      position={[0, 0, 26]} 
+      {...props}
+      />
 }
 
 export default Camera

@@ -10,6 +10,7 @@ import { fragmentShader, vertexShader, pointVertexShader, pointFragmentShader } 
 const start = Date.now();
 
 const LeBlob = ( props ) => {
+
     // This reference will give us direct access to the mesh
     const mesh = useRef()
     const shader = useRef()
@@ -100,7 +101,7 @@ const LeBlob = ( props ) => {
       }),
       []
     );
-console.log('RATIO',useThree().gl.getPixelRatio());
+
     const [active, setActive] = useState(false);
 
     // Rotate mesh every frame, this is outside of React without overhead
@@ -171,37 +172,8 @@ console.log('RATIO',useThree().gl.getPixelRatio());
 }
 
 export const Blob = ({event}) => {
-    const theme = useMemo(
-        () => ({
-            bgGradFrom: '#E0E5EC',
-            bgGradTo: '#FFFFFF',
-        }),
-        []
-    );
-
-    function Camera(props) {
-      const ref = useRef()
-      const { size, setDefaultCamera } = useThree();
-      
-      // Make the camera known to the system
-      useEffect(() => void setDefaultCamera(ref.current), [])
-      // Update it every frame
-      // useFrame(() => ref.current.updateMatrixWorld());
-
-      return <perspectiveCamera ref={ref}
-          fov="35"
-          aspect={size.width / size.height}
-          // radius={(size.width + size.height) / 4}
-          near={1}
-          far={1000} 
-          // onUpdate={self => self.updateProjectionMatrix()}
-          position={[0, 0, 26]} 
-          {...props}
-          />
-    }
-
     return (
-        <Canvas shadowMap>
+        <Canvas >
             <Camera />
             <Suspense fallback={null}>
                 {/* <LeBlob /> */}
@@ -271,17 +243,6 @@ export const Blob = ({event}) => {
                     speed={0.1}
                     /> */}
             </Suspense>
-
-            <Camera
-                autoRotate
-                enablePan={false}
-                enableZoom={false}
-                enableDamping
-                dampingFactor={0.5}
-                rotateSpeed={1}
-                maxPolarAngle={Math.PI / 2}
-                minPolarAngle={Math.PI / 2}
-            />
         </Canvas>
     );
 }
