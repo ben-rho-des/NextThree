@@ -185,7 +185,6 @@ const StyledBlobWrap = styled.div`
     height 100vh;
 `;
 
-
 const BlobControls = styled.div``;
 /*
     display: flex;
@@ -227,6 +226,15 @@ const BannerWrap = styled.div`
     }
 `;
 
+const StyledFPS = styled.div`
+    > div {
+        color: ${props => props.theme.colors.primary} !important;
+    }
+    div > div > div {
+        background: ${props => props.theme.colors.primary} !important;
+    }
+`;
+
 const OPENED_CLASS='is-open';
 const CLOSED_CLASS='is-closed';
 
@@ -239,7 +247,7 @@ const Banner = () => {
         {process.browser && process.env.NEXT_PUBLIC_BLOB !== "SANS_BLOB" && (
             <>
                 <Blob event={blobEvent} />
-                <FPSStats bottom="20px" right="60px" top="auto" />
+                <StyledFPS><FPSStats bottom="20px" right="60px" left="auto" top="auto" /></StyledFPS>
             </>
         )}
     </StyledBlobWrap>

@@ -25,10 +25,10 @@ const Masthead = () => (
     <div className="identity">
       <img src="./logo.svg" alt="BRD logo" />
     </div>
-    <Header background="brand">
+    {/* <Header background="brand">
       <Button icon={<div>hello</div>} hoverIndicator />
       <Menu label="account" items={[{ label: 'logout' }]} />
-    </Header>
+    </Header> */}
     <Nav />
   </StyledMasthead>
 );
