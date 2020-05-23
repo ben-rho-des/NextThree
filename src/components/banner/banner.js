@@ -228,10 +228,16 @@ const BannerWrap = styled.div`
 
 const StyledFPS = styled.div`
     > div {
-        color: ${props => props.theme.colors.primary} !important;
+        color: black !important;
+        border-radius: 3px;
+        box-shadow: 0 11px 40px 0 rgba(0, 0, 0, 0.25), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+        background: white !important;
+    }
+    > div > div {
+        background: transparent !important;
     }
     div > div > div {
-        background: ${props => props.theme.colors.primary} !important;
+        background: black !important;
     }
 `;
 
@@ -247,7 +253,7 @@ const Banner = () => {
         {process.browser && process.env.NEXT_PUBLIC_BLOB !== "SANS_BLOB" && (
             <>
                 <Blob event={blobEvent} />
-                <StyledFPS><FPSStats bottom="20px" right="60px" left="auto" top="auto" /></StyledFPS>
+                <StyledFPS><FPSStats bottom="80px" right="25px" left="auto" top="auto" /></StyledFPS>
             </>
         )}
     </StyledBlobWrap>
