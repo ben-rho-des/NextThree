@@ -1,1 +1,0 @@
-{"ast":null,"code":"import Social from './social';\nexport default Social;","map":{"version":3,"sources":["/home/t3hk/development/NextThree/components/social/index.js"],"names":["Social"],"mappings":"AAAA,OAAOA,MAAP,MAAmB,UAAnB;AAEA,eAAeA,MAAf","sourcesContent":["import Social from './social';\n\nexport default Social;\n"]},"metadata":{},"sourceType":"module"}

@@ -1,1 +1,0 @@
-{"ast":null,"code":"import { Blob } from './blob';\nexport default Blob;","map":{"version":3,"sources":["/home/t3hk/development/NextThree/components/blob/index.js"],"names":["Blob"],"mappings":"AAAA,SAASA,IAAT,QAAqB,QAArB;AAEA,eAAeA,IAAf","sourcesContent":["import { Blob } from './blob';\n\nexport default Blob;\n"]},"metadata":{},"sourceType":"module"}
